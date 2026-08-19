@@ -1,0 +1,7 @@
+# Deny-by-default: ~/.claude holds credentials, session transcripts and
+# other machine-local state. Only allowlisted paths below are tracked.
+*
+
+!.gitignore
+!skills/
+!skills/**
