@@ -52,9 +52,13 @@ conta.** Desinstala-o antes de instalar o `lf-skills`, senão ficas com duas
 cópias do mesmo nome vindas de plugins diferentes, e a daqui deixa de receber
 as atualizações que fizeres na outra sem nada avisar.
 
-**`julia-second-brain` não está aqui.** As preferências globais referem-no, mas
-não existe neste repo — só na máquina local. Copia
-`~/.claude/skills/julia-second-brain/` para `skills/` para o trazer.
+**`julia-second-brain` foi reconstruído, não recuperado.** O original não foi
+encontrado em nenhuma máquina (`~/.claude/skills/` no Linux e no Windows), o que
+sugere que nunca existiu como ficheiro — o comportamento vivia nas preferências
+globais e cada sessão improvisava a partir delas. O que está em
+`skills/julia-second-brain/SKILL.md` foi escrito a 2026-09-21 por engenharia
+inversa: o template saiu da nota de 17-09 lida na íntegra, as regras das
+preferências globais. Compara com o que esperas antes de confiar nele.
 
 **`ponytail-review`, `ponytail-audit` e `ponytail-debt` não são skills
 separados** — `skills/ponytail/` só tem `SKILL.md`. São modos dentro do
