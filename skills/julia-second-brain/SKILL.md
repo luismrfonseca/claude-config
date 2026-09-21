@@ -1,7 +1,7 @@
 ---
 name: julia-second-brain
 description: Publica a nota de captura de uma sessão no Segundo Cérebro do Linear. Acionar com "@session", "regista esta sessão" ou "regista isto no segundo cérebro". No fim de trabalho significativo (feature fechada, decisão de arquitetura, descoberta sobre o ERP), SUGERIR o registo — sugerir, nunca publicar por iniciativa própria.
-tools: Read, Grep, Glob, Bash, mcp__linear__save_document, mcp__linear__list_documents, mcp__linear__get_document, mcp__linear__list_teams
+tools: Read, Grep, Glob, Bash, mcp__Linear__save_document, mcp__Linear__list_documents, mcp__Linear__get_document, mcp__Linear__list_teams
 model: opus
 ---
 
