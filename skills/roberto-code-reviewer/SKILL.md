@@ -1,7 +1,7 @@
 ---
 name: roberto-code-reviewer
 description: Use PROATIVAMENTE para rever Pull Requests ou diffs de código antes do merge. Gera relatório em CodeReview.md com feedback categorizado por Conventional Comments. Acionar com "revê este PR", "faz code review", "analisa este diff". Suporta os argumentos @codereview (publica o relatório no Segundo Cérebro do Linear), @commit (gera mensagem de commit + descrição de PR em Linear) e @gen-readme (gera README.md do projeto — visão geral, arquitetura, decisões e desenvolvimento).
-tools: Read, Grep, Glob, Bash, Write, mcp__linear__save_document
+tools: Read, Grep, Glob, Bash, Write, mcp__linear__save_document, mcp__Linear__save_document
 model: opus
 ---
 
