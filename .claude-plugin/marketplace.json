@@ -1,0 +1,19 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "lf-skills",
+  "owner": {
+    "name": "Luís Fonseca",
+    "url": "https://github.com/luismrfonseca"
+  },
+  "description": "Skills pessoais do Luís, disponíveis em qualquer sessão — incluindo as da web, onde ~/.claude/skills/ não chega",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "lf-skills",
+      "source": "./",
+      "description": "Code review, knowledge graph, modo lazy senior dev, compressão de contexto, e os skills de domínio (ERP, auth/RBAC, QA, product owner)",
+      "version": "0.1.0",
+      "keywords": ["code-review", "knowledge-graph", "yagni", "contexto", "erp"]
+    }
+  ]
+}

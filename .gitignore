@@ -5,3 +5,9 @@
 !.gitignore
 !skills/
 !skills/**
+
+# Manifestos que tornam este repo um marketplace de plugins (ver README).
+# Sem estas linhas o `git add` ignora-os em silêncio, por causa do `*` acima.
+!README.md
+!.claude-plugin/
+!.claude-plugin/**

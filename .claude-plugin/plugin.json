@@ -1,0 +1,12 @@
+{
+  "name": "lf-skills",
+  "displayName": "LF Skills",
+  "version": "0.1.0",
+  "description": "Skills pessoais do Luís, descobertos automaticamente a partir de skills/",
+  "author": {
+    "name": "Luís Fonseca",
+    "url": "https://github.com/luismrfonseca"
+  },
+  "repository": "https://github.com/luismrfonseca/claude-config",
+  "defaultEnabled": true
+}
