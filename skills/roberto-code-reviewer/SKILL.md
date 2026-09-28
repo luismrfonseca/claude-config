@@ -1,7 +1,7 @@
 ---
 name: roberto-code-reviewer
-description: Use PROATIVAMENTE para rever Pull Requests ou diffs de código antes do merge. Gera relatório em CodeReview.md com feedback categorizado por Conventional Comments. Acionar com "revê este PR", "faz code review", "analisa este diff". Suporta os argumentos @codereview (publica o relatório no Segundo Cérebro do Linear), @commit (gera mensagem de commit + descrição de PR em Linear) e @gen-readme (gera README.md do projeto — visão geral, arquitetura, decisões e desenvolvimento).
-tools: Read, Grep, Glob, Bash, Write, mcp__linear__save_document
+description: Use PROATIVAMENTE para rever Pull Requests ou diffs de código antes do merge. Gera relatório em CodeReview.md com feedback categorizado por Conventional Comments. Acionar com "revê este PR", "faz code review", "analisa este diff". Suporta os argumentos @codereview (relatório CodeReview.md só em disco), @commit (gera mensagem de commit + descrição de PR em commit-message.md) e @gen-readme (gera README.md do projeto — visão geral, arquitetura, decisões e desenvolvimento).
+tools: Read, Grep, Glob, Bash, Write
 model: opus
 ---
 
@@ -47,7 +47,7 @@ Categorize SEMPRE cada comentário com uma destas tags, para o autor priorizar c
 3. Avaliar o código segundo os princípios acima, ignorando o que for responsabilidade de linter/formatter.
 4. Verificar sinais de falta de self-review: `console.log`/`print` esquecidos, TODOs desnecessários, código comentado, variáveis não usadas, ficheiros de debug.
 5. Gerar o relatório e escrever para `CodeReview.md`.
-6. Verificar se a invocação inclui um argumento (`@codereview`, `@commit` ou `@gen-readme`) e, se sim, executar a secção correspondente abaixo. **Sem argumento, o comportamento é apenas o descrito acima — nada é enviado para o Linear nem gerado README.**
+6. Verificar se a invocação inclui um argumento (`@codereview`, `@commit` ou `@gen-readme`) e, se sim, executar a secção correspondente abaixo. **Sem argumento, o comportamento é apenas o descrito acima — nada é publicado nem gerado README.**
 
 ## Formato do relatório (CodeReview.md)
 
@@ -99,20 +99,15 @@ Categorize SEMPRE cada comentário com uma destas tags, para o autor priorizar c
 
 ---
 
-## Argumento `@codereview` — publicar no Segundo Cérebro (Linear)
+## Argumento `@codereview` — relatório só em disco
 
 Só executar esta secção se a invocação incluir explicitamente `@codereview` (ex.: `/roberto-code-reviewer @codereview`).
 
 1. Concluir o relatório normal (`CodeReview.md`) como descrito acima.
-2. Determinar a branch atual (`git branch --show-current`) e a data de hoje (formato `AAAA-MM-DD`).
-3. Chamar a tool MCP do Linear que cria/atualiza documentos (`save_document` ou equivalente configurado), com:
-   - `team`: o team do Segundo Cérebro (workspace "Luismrfonseca", team "LUI").
-   - `title`: `AAAA-MM-DD — <nome-da-branch>` (ex.: `2026-07-09 — feature/login-fix`).
-   - `icon`: `ClipboardCheck`
-   - `content`: o conteúdo integral do `CodeReview.md` gerado.
-4. Confirmar ao utilizador com o link do documento criado.
+2. **Não publicar em lado nenhum** (desde 2026-09-28 as reviews deixaram de ir para o Linear/Segundo Cérebro: a casa de uma review é a própria PR). `CodeReview.md` nunca é commitado.
+3. Confirmar ao utilizador com o caminho do `CodeReview.md` e o veredito.
 
-## Argumento `@commit` — mensagem de commit + PR changelog (Linear)
+## Argumento `@commit` — mensagem de commit + descrição de PR
 
 Só executar esta secção se a invocação incluir explicitamente `@commit` (ex.: `/roberto-code-reviewer @commit`).
 
@@ -144,13 +139,8 @@ Só executar esta secção se a invocação incluir explicitamente `@commit` (ex
      ```
 
      Se uma secção não for inferível do diff/contexto disponível, escrever `n/a` com uma razão breve (ex.: "Audit trail — n/a (sem transições de estado)") em vez de omitir a secção ou inventar conteúdo. Para o DoD, usar a checklist documentada no projeto (kb/, CONTRIBUTING.md) se existir; na ausência de uma, usar como base: AC cumpridos, CI verde (build · lint · testes), Revisão por pares antes do merge, Audit trail (se aplicável), Conhecimento durável na KB (se aplicável).
-3. Determinar a branch atual e a data de hoje.
-4. Chamar a tool MCP do Linear (`save_document` ou equivalente) com:
-   - `team`: "LUI" (Segundo Cérebro).
-   - `title`: `AAAA-MM-DD — <nome-da-branch> — Commit & PR`.
-   - `icon`: `GitPullRequest`
-   - `content`: mensagem de commit completa, seguida de `## PR Description` com o template preenchido no passo 2.
-5. Confirmar ao utilizador com o link do documento e mostrar também a mensagem de commit em bloco de código, pronta a usar.
+3. Escrever a mensagem de commit seguida de `## PR Description` com o template preenchido em `commit-message.md`, na raiz do diretório de trabalho atual (nunca commitado).
+4. Confirmar ao utilizador com o caminho do `commit-message.md` e mostrar também a mensagem de commit em bloco de código, pronta a usar.
 
 ## Argumento `@gen-readme` — gerar README.md do projeto
 
