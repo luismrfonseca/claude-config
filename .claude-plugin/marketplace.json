@@ -11,9 +11,9 @@
     {
       "name": "lf-skills",
       "source": "./",
-      "description": "Code review, knowledge graph, modo lazy senior dev, compressão de contexto, e os skills de domínio (ERP, auth/RBAC, QA, product owner)",
-      "version": "0.1.0",
-      "keywords": ["code-review", "knowledge-graph", "yagni", "contexto", "erp"]
+      "description": "Code review, knowledge graph, modo lazy senior dev, compressão de contexto, os skills de domínio (ERP, auth/RBAC, QA, product owner) e skills de decisão (arquitetura, SRE, AI engineering, integração)",
+      "version": "0.2.0",
+      "keywords": ["code-review", "knowledge-graph", "yagni", "contexto", "erp", "architecture", "sre", "llm", "integration"]
     }
   ]
 }

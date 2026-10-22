@@ -41,9 +41,31 @@ instala o credential helper.
 
 ## Skills
 
-`auth-rbac` · `codebase-memory` · `domain-architect` · `erp-integration` ·
-`graphify` · `headroom` · `michael` · `orchestrator` · `ponytail` ·
-`product-owner` · `qa-fitness` · `roberto-code-reviewer`
+`ai-engineering` · `architecture-tradeoffs` · `auth-rbac` · `codebase-memory` ·
+`domain-architect` · `enterprise-integration` · `erp-integration` · `graphify` ·
+`headroom` · `michael` · `orchestrator` · `ponytail` · `product-owner` ·
+`qa-fitness` · `roberto-code-reviewer` · `sre-reliability`
+
+### Skills de decisão (destiladas de livros)
+
+`architecture-tradeoffs`, `sre-reliability`, `ai-engineering` e
+`enterprise-integration` foram destiladas de *Fundamentals of Software
+Architecture*, *Site Reliability Engineering*, *AI Engineering* (Huyen) e
+*Solution Architecture Patterns for Enterprise*. Estão cortadas por tarefa e não
+por livro. Cada uma tem um `SKILL.md` curto e `references/` por tema, com
+citação de capítulo para navegação; o output final não cita os livros.
+
+Validadas com 3 iterações de evals (com skill vs sem skill, 2 casos
+NestJS/AWS cada). Na última, o delta de pass rate ficou entre +41 e +58 pontos.
+
+**Disparam mal por si.** A otimização das descriptions (`run_loop` do
+skill-creator, 5 iterações) deu recall de 0–17% com qualquer variante: o modelo
+responde diretamente a perguntas de arquitetura, SRE ou LLM em vez de carregar a
+skill. Invocá-las explicitamente (`/architecture-tradeoffs`) ou pôr a regra de
+encaminhamento nas preferências globais.
+
+Fronteira com as skills de domínio: código dentro do `domain-service` vai para
+`domain-architect` ou `erp-integration`; estas quatro são para decisões.
 
 ### Avisos
 
