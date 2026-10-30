@@ -80,7 +80,10 @@ sugere que nunca existiu como ficheiro — o comportamento vivia nas preferênci
 globais e cada sessão improvisava a partir delas. O que está em
 `skills/julia-second-brain/SKILL.md` foi escrito a 2026-09-21 por engenharia
 inversa: o template saiu da nota de 17-09 lida na íntegra, as regras das
-preferências globais. Compara com o que esperas antes de confiar nele.
+preferências globais. A 2026-10-30 foi reescrito para o vault Obsidian
+`velvetmed/segundo-cerebro` (`sessions/`, commit e push só lá), porque o Linear
+deixou de ser o Segundo Cérebro a 28-09. Compara com o que esperas antes de
+confiar nele.
 
 **`ponytail-review`, `ponytail-audit` e `ponytail-debt` não são skills
 separados** — `skills/ponytail/` só tem `SKILL.md`. São modos dentro do
